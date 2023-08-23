@@ -1,9 +1,9 @@
-import { Card } from './components/card/card';
+import { Characters } from './components/characters/characters';
 
 export function App() {
   return (
     <div>
-      <Card></Card>
+      <Characters></Characters>
     </div>
   );
 }

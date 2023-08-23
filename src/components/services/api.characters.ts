@@ -8,7 +8,9 @@ export class ApiCharacter {
 
   async getAll(url: string): Promise<Character[]> {
     const response = await fetch(url);
-    const data: Character[] = await response.json();
+    const data = await response.json();
     return data;
   }
 }
+
+export const gotRepo = new ApiCharacter('http://localhost:3000/characters');

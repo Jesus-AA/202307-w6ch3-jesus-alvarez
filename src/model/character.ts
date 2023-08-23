@@ -7,7 +7,7 @@ export type CharacterNoId = {
   reignYears?: number;
   weapon?: string;
   skillLevel?: number;
-  adviseTo?: CharacterNoId;
+  adviseTo?: CharacterNoId | string;
   serveLevel?: number;
   servesTo?: CharacterNoId;
 };
