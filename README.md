@@ -1,4 +1,4 @@
-# Week 4 - Challenge 3
+# Week 6 - Challenge 3
 
 ## GoT DOM - React - Typescript
 
