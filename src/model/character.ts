@@ -12,6 +12,4 @@ export type CharacterNoId = {
   servesTo?: CharacterNoId;
 };
 
-// Cuando una propiedad de un tipo es opcional, se coloca un signo de interrogación como arriba.
-
 export type Character = CharacterNoId & { id: number };

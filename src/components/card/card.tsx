@@ -1,22 +1,31 @@
-import { gotChars } from '../api/gotApi';
-import { GOTCharacters } from '../types/character';
+import { Character } from '../../model/character';
+import { gotRepo } from '../services/gotApi';
 
 export function Card() {
-  const repository: GOTCharacters = gotChars();
+  const getCharacters = async () => {
+    const gotCharacters = await gotRepo.getAll(
+      'http://localhost:3000/characters'
+    );
+    console.log(gotCharacters);
+    return gotCharacters;
+  };
 
-  return repository.map((item) => {
+  const gotCharacters = getCharacters();
+  console.log(gotCharacters);
+
+  return gotCharacters.map((item: Character) => {
     <li className="character col">
       <div className="card character__card">
         <img
-          src="img/no-one.jpg"
+          src={item.name}
           alt="Nombre y familia del personaje"
           className="character__picture card-img-top"
         />
         <div className="card-body">
-          <h2 className="character__name card-title h4">{item}</h2>
+          <h2 className="character__name card-title h4">{item.name}</h2>
           <div className="character__info">
             <ul className="list-unstyled">
-              <li>Edad: X años</li>
+              <li>Edad:{item.age}</li>
               <li>
                 Estado:
                 <i className="fas fa-thumbs-down"></i>
